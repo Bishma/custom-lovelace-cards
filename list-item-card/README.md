@@ -29,7 +29,7 @@ Then add into your lovelace views
 _(String) (Required)_ The entity containing the list attribute.
 
 ### attribute
-_(String) (Required)_ The attribute that is a list of string.
+_(String) (Required)_ The attribute that of the entity (above) which contains the list of strings.
 
 ### title
 _(String) (Optional)_ The card's title.
