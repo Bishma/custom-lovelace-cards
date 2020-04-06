@@ -37,13 +37,9 @@ class ListItem extends HTMLElement {
         }
 
         let listData = hass.states[this.config.entity].attributes[this.config.attribute];
-        // if the list isn't a list say so
+        // if the list isn't a list, display default empty value
         if (!Array.isArray(listData)) {
-            listData = [
-                `The attribute '${this.config.attribute}'`,
-                ` of entity '${this.config.entity}'`,
-                ` is not a list.`
-            ];
+               listData = this.config.emptyValue; 
         }
 
         // the number of items to display is the small of this.config.max_length or listData.length
@@ -98,6 +94,17 @@ class ListItem extends HTMLElement {
             config['list_icon'] = `icon='${config.icon}'`
             delete config.icon;
         }
+
+ 	/**
+         * Values to visualize if list is empty. 
+         */
+         if (!config.emptyValue || !Array.isArray(config.emptyValue) ) {
+            config.emptyValue =  [
+                `The attribute '${config.attribute}'`,
+                ` of entity '${config.entity}'`,
+                ` is not a list.`
+            ];
+         }
 
         this.config = config;
     }
