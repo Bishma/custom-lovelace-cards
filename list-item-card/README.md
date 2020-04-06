@@ -4,7 +4,8 @@
 
 ## Purpose
 
-This is a pretty niche use case. This card takes sensor attributes that are lists of strings and displays them as a card. Each item in the list it displayed on a line with an optional icon as a bullet point.
+This card takes sensor attributes that are lists of strings and displays them as a card. Each item in the list it displayed on a line with an optional icon as a bullet point.
+By default an error message is visualized in case the sensor returns and empty or invalid list. 
 
 ## Installation
 
@@ -39,3 +40,6 @@ _(String) (Optional)_ The icon to prefix each list item. The area will be empty 
 
 ### max_length
 _(Int) (Optional)_ The maximum number of items that will be read from the list. Defaults to 4.
+
+### emptyValue
+_(List) (Optional)_ A list of strings to visualize if the sensor attribute is empty or an invalid list.  To visualize nothing pass an empty list.  
